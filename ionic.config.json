@@ -1,5 +1,7 @@
 {
   "name": "goToHN",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

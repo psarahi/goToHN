@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'itinerario-stepper',
+    loadChildren: () => import('./itinerario-stepper/itinerario-stepper.module').then( m => m.ItinerarioStepperPageModule)
   }
 ];
 @NgModule({
