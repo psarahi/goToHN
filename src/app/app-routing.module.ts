@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path: 'itinerario-stepper',
     loadChildren: () => import('./itinerario-stepper/itinerario-stepper.module').then( m => m.ItinerarioStepperPageModule)
+  },
+  {
+    path: 'itinerario-detalle',
+    loadChildren: () => import('./itinerario-detalle/itinerario-detalle.module').then( m => m.ItinerarioDetallePageModule)
+  },
+  {
+    path: 'actividades',
+    loadChildren: () => import('./actividades/actividades.module').then( m => m.ActividadesPageModule)
   }
 ];
 @NgModule({

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "actividad": "Caminar a Merendon",
+        "lugar": "SPS",
+        "duracion": 180
+    },
+    {
+        "id": 2,
+        "actividad": "Visitar teatro Saybe",
+        "lugar": "SPS",
+        "duracion": 120
+    },
+    {
+        "id": 3,
+        "actividad": "Playa west beach",
+        "lugar": "Roatan",
+        "duracion": 60
+    },
+    {
+        "id": 4,
+        "actividad": "Scuba diving",
+        "lugar": "Roatan",
+        "duracion": 30
+    },
+    {
+        "id": 5,
+        "actividad": "Visitar museo Antropologico",
+        "lugar": "SPS",
+        "duracion": 45
+    },
+    {
+        "id": 6,
+        "actividad": "Visitar rotulo de Coca-Cola",
+        "lugar": "SPS",
+        "duracion": 120
+    }
+]

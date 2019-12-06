@@ -1,4 +1,4 @@
-<ion-header no-border >
+<ion-header no-border>
   <ion-toolbar>
     <h2 class="ion-padding ion-text-left" style="margin: 0px !important">
       Mis próximos viajes
@@ -7,16 +7,40 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card">
-    <ion-img src="/assets/Roatan.jpg"></ion-img>
-    <ion-card-header>
-      <ion-card-subtitle>15 de diciembre, 2019</ion-card-subtitle>
-      <ion-card-title>Viaje a Roatan</ion-card-title>
-    </ion-card-header>
-  </ion-card>
+  <ion-slides [options]="slideOpts">
+    <ion-slide>
+      <ion-card routerLink="/itinerario-detalle"  class="welcome-card">
+        <img src="/assets/Roatan.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
+          <ion-card-title text-left>Viaje a Roatan</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="welcome-card">
+        <ion-img src="/assets/Roatan.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>15 de diciembre, 2019</ion-card-subtitle>
+          <ion-card-title>Viaje a Roatan</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="welcome-card">
+        <ion-img src="/assets/add.svg"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>15 de diciembre, 2019</ion-card-subtitle>
+          <ion-card-title>Viaje a Roatan</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/itinerario-stepper" >
+    <ion-fab-button routerLink="/itinerario-stepper">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

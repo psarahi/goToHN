@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-itinerario-detalle',
+  templateUrl: './itinerario-detalle.page.html',
+  styleUrls: ['./itinerario-detalle.page.scss'],
 })
-export class Tab1Page implements OnInit {
+export class ItinerarioDetallePage implements OnInit {
 
   slideOpts: any;
-
   constructor() { }
 
-  ngOnInit() {
 
+  ngOnInit() {
     this.slideOpts = {
       grabCursor: true,
       cubeEffect: {
@@ -23,4 +22,5 @@ export class Tab1Page implements OnInit {
       }
     };
   }
+
 }

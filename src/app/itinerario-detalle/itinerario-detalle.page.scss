@@ -1,0 +1,54 @@
+
+
+.itinerarioDetailHeader{
+    position: relative;
+}
+
+.itinerarioDetailHeader_image{
+    // max-height: 150px;
+}
+
+.itinerarioDetailHeader_city{
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 47px; 
+    color: white;
+    position:absolute;
+    bottom: 32px;
+    left: 20px;
+}
+
+.itinerarioDetailHeader_time{
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 47px;
+    position:absolute;
+    bottom: 4px;
+    color: white;
+    left: 20px;
+}
+
+.dayTitle{
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 47px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.addActividad{
+    min-width: 140px;
+    background: #FFFFFF;
+    border: 2px dashed #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 226px;
+    margin-left: unset;
+    margin-right: unset;
+    -webkit-margin-start: 16px;
+    margin-inline-start: 16px;
+    -webkit-margin-end: 16px;
+    margin-inline-end: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
