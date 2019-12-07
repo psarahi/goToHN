@@ -42,7 +42,7 @@
     border: 2px dashed #DFDFDF;
     box-sizing: border-box;
     border-radius: 8px;
-    height: 226px;
+    height: 200px;
     margin-left: unset;
     margin-right: unset;
     -webkit-margin-start: 16px;
@@ -51,4 +51,40 @@
     margin-inline-end: 16px;
     margin-top: 24px;
     margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.cardTitleHelper{
+    font-size: 17px;
+    width: 140px;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.addActividadTitle{
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center; 
+    color: gray;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+
+.addActividadSubtitle{
+    font-weight: 500;
+    font-size: 9px;
+    text-align: center;
+    color: gray;
+    position: absolute;
+    bottom: 25px;
+    left: 14px;
 }

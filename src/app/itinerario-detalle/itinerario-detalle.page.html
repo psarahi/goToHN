@@ -3,7 +3,7 @@
       <ion-buttons slot="start">
           <ion-back-button defaultHref="/dashboard/tabs/tab1"></ion-back-button>
       </ion-buttons>
-    <ion-title>itinerario-detalle</ion-title>
+    <ion-title>Itinerario</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,59 +11,54 @@
     <div class="itinerarioDetailHeader">
       <ion-img class="itinerarioDetailHeader_image" src="/assets/Roatan.jpg">
       </ion-img>
-      <div class="itinerarioDetailHeader_city"> Roatan City </div>
+      <div class="itinerarioDetailHeader_city"> Roatan </div>
       <div class="itinerarioDetailHeader_time"> 15 de Diciembre - 18 de Diciembre </div>
     </div>
     <div class="dayTitle">15 de Diciembre</div>
      <div style="display: flex; flex-direction: row; overflow: scroll;">
        
-          <ion-card style="min-width: 140px;" routerLink="/itinerario-detalle"  class="welcome-card">
-            <img src="/assets/Roatan.jpg" />
+          <ion-card style="min-width: 170px;" routerLink="/itinerario-detalle"  class="welcome-card">
+            <img src="/assets/Img/westbay.png" />
             <ion-card-header>
-              <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
-              <ion-card-title text-left>Viaje a Roatan</ion-card-title>
+              <ion-card-subtitle text-left>8:00AM - 9:00AM</ion-card-subtitle>
+              <ion-card-title text-left><span class="cardTitleHelper">Playa west bay</span></ion-card-title>
             </ion-card-header>
+            <ion-card-content>
+              <ion-chip outline color="secondary">
+                <ion-icon name="water"></ion-icon>
+                <ion-label>Agua</ion-label>
+              </ion-chip>
+            </ion-card-content>
           </ion-card>
-          <ion-card style="min-width: 140px;" routerLink="/itinerario-detalle"  class="welcome-card">
-            <img src="/assets/Roatan.jpg" />
+          <ion-card style="min-width: 170px;" routerLink="/itinerario-detalle"  class="welcome-card">
+            <img src="/assets/Img/scuba.png" />
             <ion-card-header>
-              <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
-              <ion-card-title text-left>Viaje a Roatan</ion-card-title>
+              <ion-card-subtitle text-left>10:00AM - 11:00AM</ion-card-subtitle>
+              <ion-card-title text-left style="font-size:17px;"><span class="cardTitleHelper">Scuba Diving</span></ion-card-title>
             </ion-card-header>
-          </ion-card>
-          <ion-card style="min-width: 140px;" routerLink="/itinerario-detalle"  class="welcome-card">
-            <img src="/assets/Roatan.jpg" />
-            <ion-card-header>
-              <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
-              <ion-card-title text-left>Viaje a Roatan</ion-card-title>
-            </ion-card-header>
+            <ion-card-content>
+              <ion-chip outline color="secondary">
+                <ion-icon name="water"></ion-icon>
+                <ion-label>Agua</ion-label>
+              </ion-chip>
+            </ion-card-content>
           </ion-card>
           <div style="min-width: 170px;">
             <div class="addActividad">
-
+              <ion-icon name="add" style="color: gray;"></ion-icon>
+              <div class="addActividadTitle">Añade otra actividad</div>
+              <div class="addActividadSubtitle">Nosotros te sugerimos mas</div>
             </div>
           </div>
      </div>
      <div class="dayTitle">16 de Diciembre</div>
      <div style="display: flex; flex-direction: row; overflow: scroll;">
-          <ion-card style="min-width: 140px;" routerLink="/itinerario-detalle"  class="welcome-card">
-            <img src="/assets/Roatan.jpg" />
-            <ion-card-header>
-              <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
-              <ion-card-title text-left>Viaje a Roatan</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-          <ion-card style="min-width: 140px;" routerLink="/itinerario-detalle"  class="welcome-card">
-            <img src="/assets/Roatan.jpg" />
-            <ion-card-header>
-              <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
-              <ion-card-title text-left>Viaje a Roatan</ion-card-title>
-            </ion-card-header>
-          </ion-card>
           <div style="min-width: 170px;">
-            <div class="addActividad">
-
-            </div>
+              <div class="addActividad">
+                <ion-icon name="add" style="color: gray;"></ion-icon>
+                <div class="addActividadTitle">Añade otra actividad</div>
+                <div class="addActividadSubtitle">Nosotros te sugerimos mas</div>
+              </div>
           </div>
      </div>
 
