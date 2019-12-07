@@ -17,7 +17,7 @@
           <ion-card-title style="font-size: 20px;"> ¿Qué ciudad planea visitar? </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <ion-select placeholder="Seleccione una ciudad">
+          <ion-select placeholder="Seleccione una ciudad" [(ngModel)]="ciudad">
             <ion-select-option value="Roatan">Roatan</ion-select-option>
             <ion-select-option value="SPS">San Pedro Sula</ion-select-option>
             <ion-select-option value="m">Tegucigalpa</ion-select-option>
@@ -48,7 +48,7 @@
             <ion-datetime displayFormat="MMMM DD YYYY" max="2099-10-31" placeholder="Seleccione la fecha final">
             </ion-datetime>
           </ion-item>
-          <ion-button expand="full" fill="clear" routerLink="/actividades">Crear mi itinerario</ion-button>
+          <ion-button expand="full" fill="clear" (click)="openDetailsWithState()">Crear mi itinerario</ion-button>
         </ion-card-content>
       </ion-card>
 
