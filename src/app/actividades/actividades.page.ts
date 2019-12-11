@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../Services/data.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActividadService } from '../Services/actividad.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-actividades',
   templateUrl: './actividades.page.html',
   styleUrls: ['./actividades.page.scss'],
 })
-export class ActividadesPage implements OnInit {
+export class ActividadesPage implements OnInit, OnDestroy {
 
+  actividadObservable: any;
   actividades: any[] = [];
   actividadesSeleccionadas: any[] = [];
   ciudad: any = '';
-  constructor(private dataService: DataService, private route: ActivatedRoute,
+  constructor(
+    private actividadService: ActividadService,
+    private route: ActivatedRoute,
     private router: Router) {
 
     this.route.queryParams.subscribe(params => {
@@ -24,11 +28,11 @@ export class ActividadesPage implements OnInit {
 
   }
   ngOnInit() {
-    this.dataService.getActividades().subscribe(
+    this.actividadObservable = this.actividadService.getActividades().subscribe(
       dat => {
 
         this.actividades = dat;
-        this.actividades = this.actividades.filter(x => x.lugar == this.ciudad);
+        // this.actividades = this.actividades.filter(x => x.lugar == this.ciudad);
         console.log(this.actividades);
 
       }
@@ -51,6 +55,10 @@ export class ActividadesPage implements OnInit {
       
     }
 
+  }
+
+  ngOnDestroy(): void {
+    this.actividadObservable.unsubscribe();
   }
 
 }

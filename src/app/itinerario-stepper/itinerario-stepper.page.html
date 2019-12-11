@@ -18,9 +18,7 @@
         </ion-card-header>
         <ion-card-content>
           <ion-select placeholder="Seleccione una ciudad" [(ngModel)]="ciudad">
-            <ion-select-option value="Roatan">Roatan</ion-select-option>
-            <ion-select-option value="SPS">San Pedro Sula</ion-select-option>
-            <ion-select-option value="m">Tegucigalpa</ion-select-option>
+            <ion-select-option *ngFor="let ciudad of ciudades" value="{{ciudad.ciudadNombre}}">{{ciudad.ciudadNombre}}</ion-select-option>
           </ion-select>
         </ion-card-content>
       </ion-card>
