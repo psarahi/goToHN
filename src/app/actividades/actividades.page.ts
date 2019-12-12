@@ -52,7 +52,7 @@ export class ActividadesPage implements OnInit, OnDestroy {
       }
 
       console.log(this.actividadesSeleccionadas);
-      
+
     }
 
   }
