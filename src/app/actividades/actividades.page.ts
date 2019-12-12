@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActividadService } from '../Services/actividad.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -32,7 +32,7 @@ export class ActividadesPage implements OnInit, OnDestroy {
       dat => {
 
         this.actividades = dat;
-        // this.actividades = this.actividades.filter(x => x.lugar == this.ciudad);
+        //this.actividades = this.actividades.filter(x => x.lugar == this.ciudad);
         console.log(this.actividades);
 
       }
@@ -55,6 +55,16 @@ export class ActividadesPage implements OnInit, OnDestroy {
 
     }
 
+  }
+
+  confirmarSeleccionDeActividades(){
+
+    const navigationExtras: NavigationExtras = {
+      state: {
+        actividadesSeleccionadas: this.actividadesSeleccionadas
+      }
+    };
+    this.router.navigate(['prioridad-selector'], navigationExtras);
   }
 
   ngOnDestroy(): void {

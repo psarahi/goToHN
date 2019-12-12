@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'actividades',
     loadChildren: () => import('./actividades/actividades.module').then( m => m.ActividadesPageModule)
+  },
+  {
+    path: 'prioridad-selector',
+    loadChildren: () => import('./prioridad-selector/prioridad-selector.module').then( m => m.PrioridadSelectorPageModule)
   }
 ];
 @NgModule({

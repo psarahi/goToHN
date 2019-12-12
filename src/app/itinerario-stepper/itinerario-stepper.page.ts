@@ -11,11 +11,11 @@ export class ItinerarioStepperPage implements OnInit {
 
   ciudad: string = '';
   ciudades: any[];
-  
+
   constructor(private router: Router, private ciudadService: CiudadService) { }
 
   ngOnInit() {
-    this.ciudadService.getCiudades().toPromise().then( data => {
+    this.ciudadService.getCiudades().toPromise().then(data => {
       this.ciudades = data;
       console.log(data);
     });
@@ -28,6 +28,7 @@ export class ItinerarioStepperPage implements OnInit {
         ciudad: this.ciudad
       }
     };
+
     this.router.navigate(['actividades'], navigationExtras);
 
   }
