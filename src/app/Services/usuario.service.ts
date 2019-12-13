@@ -5,12 +5,18 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CiudadService {
+export class UsuarioService {
 
   baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
-  getCiudades() {
-    return this.http.get<any[]>(this.baseUrl + 'ciudad');
+  postUsuario(usuario) {
+    return this.http.post(this.baseUrl + 'Usuario', usuario);
+
   }
+
+  getUsuario() {
+    return this.http.get(this.baseUrl + 'Usuario');
+  }
+
 }

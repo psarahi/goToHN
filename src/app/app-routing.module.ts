@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'prioridad-selector',
     loadChildren: () => import('./prioridad-selector/prioridad-selector.module').then( m => m.PrioridadSelectorPageModule)
+  },
+  {
+    path: 'usuario',
+    loadChildren: () => import('./usuario/usuario.module').then( m => m.UsuarioPageModule)
   }
 ];
 @NgModule({

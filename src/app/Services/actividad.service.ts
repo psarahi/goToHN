@@ -11,6 +11,6 @@ export class ActividadService {
   constructor(private http: HttpClient) { }
 
   getActividades() {
-    return this.http.get<any[]>(this.baseUrl + '/actividad');
+    return this.http.get<any[]>(this.baseUrl + 'actividad');
   }
 }
