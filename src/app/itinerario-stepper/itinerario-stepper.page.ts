@@ -13,7 +13,7 @@ import { ItinerarioEncabezado } from '../Modelos/itinerarioEncabezado';
 })
 export class ItinerarioStepperPage implements OnInit {
 
-  ciudad: string = '';
+  ciudad: number = 0;
   ciudades: Ciudad[];
   fechaInicial: any;
   fechaFinal: any;
@@ -21,9 +21,9 @@ export class ItinerarioStepperPage implements OnInit {
   userLogin: any;
 
   constructor(private router: Router,
-              private ciudadService: CiudadService,
-              private storage: Storage,
-              private itinerarioEncabezadoService: ItinerarioEncabezadoService) {
+    private ciudadService: CiudadService,
+    private storage: Storage,
+    private itinerarioEncabezadoService: ItinerarioEncabezadoService) {
     this.itinerarioEncabezado = new ItinerarioEncabezado();
   }
 
@@ -48,21 +48,25 @@ export class ItinerarioStepperPage implements OnInit {
   }
 
   openDetailsWithState() {
-    debugger;
-    this.itinerarioEncabezado.itinerarioEncabezadoNombre = this.ciudades[0].ciudadNombre;
+
+    this.itinerarioEncabezado.itinerarioEncabezadoNombre = '';
     this.itinerarioEncabezado.itinerarioEncabezadoFechaInicio = this.fechaInicial;
     this.itinerarioEncabezado.itinerarioEncabezadoFechaFinal = this.fechaFinal;
-    this.itinerarioEncabezado.lugar_Id = this.ciudades[0].ciudadId;
-    this.itinerarioEncabezado.ciudad_Id = this.ciudades[0].ciudadId;
+    this.itinerarioEncabezado.lugar_Id = 4;
+    this.itinerarioEncabezado.ciudad_Id = this.ciudad;
     this.itinerarioEncabezado.usuario_Id = this.userLogin;
+
+    //console.log(this.itinerarioEncabezado);
+
 
     this.itinerarioEncabezadoService.postItinerarioEncabezado(this.itinerarioEncabezado)
       .toPromise()
-      .then(data => {
+      .then((data: ItinerarioEncabezado) => {
         console.log(data);
         let navigationExtras: NavigationExtras = {
           state: {
-            ciudad: this.ciudad
+            ciudad: this.ciudad,
+            idItinerario: data.itinerarioEncabezadoId
           }
         };
         this.router.navigate(['actividades'], navigationExtras);

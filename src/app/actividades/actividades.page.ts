@@ -14,6 +14,7 @@ export class ActividadesPage implements OnInit, OnDestroy {
   actividades: any[] = [];
   actividadesSeleccionadas: any[] = [];
   ciudad: any = '';
+  idItinerarioEncabezado: number = 0;
   constructor(
     private actividadService: ActividadService,
     private route: ActivatedRoute,
@@ -22,7 +23,8 @@ export class ActividadesPage implements OnInit, OnDestroy {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.ciudad = this.router.getCurrentNavigation().extras.state.ciudad;
-        console.log(this.ciudad + ' hhh');
+        this.idItinerarioEncabezado = this.router.getCurrentNavigation().extras.state.idItinerario; //Este es el id del itinerario creado
+        console.log(this.ciudad, ' ', this.idItinerarioEncabezado);
       }
     });
 
@@ -57,7 +59,7 @@ export class ActividadesPage implements OnInit, OnDestroy {
 
   }
 
-  confirmarSeleccionDeActividades(){
+  confirmarSeleccionDeActividades() {
 
     const navigationExtras: NavigationExtras = {
       state: {
