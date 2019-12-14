@@ -13,7 +13,7 @@ export class Tab1Page implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.storage.get('usuarioActual'));
+    //console.log(this.storage.get('usuarioActual'));
 
     this.slideOpts = {
       grabCursor: true,

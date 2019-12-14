@@ -7,7 +7,14 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button expand="full" fill="clear" size="medium" (click)="logout()" >
+
+  <div class="ion-margin" style="display: flex;flex-direction: row;justify-content: center;">
+    <img style="width: 100px; height: 100px;" src="assets/user.svg" alt="">
+  </div>
+  <div class="ion-padding" style="text-align: center">
+      <ion-label> {{ userLogin.usuarioNombre }} </ion-label>
+  </div>
+  <ion-button expand="full" fill="clear" size="medium" (click)="logout()">
     Cerrar sesión
   </ion-button>
 

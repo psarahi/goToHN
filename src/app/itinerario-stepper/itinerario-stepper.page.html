@@ -18,7 +18,7 @@
         </ion-card-header>
         <ion-card-content>
           <ion-select placeholder="Seleccione una ciudad" [(ngModel)]="ciudad">
-            <ion-select-option *ngFor="let ciudad of ciudades" value="{{ciudad.ciudadId}}">{{ciudad.ciudadNombre}}
+            <ion-select-option *ngFor="let ciudad of ciudades"  value="{{ciudad.ciudadId}}">{{ciudad.ciudadNombre}}
             </ion-select-option>
           </ion-select>
         </ion-card-content>
@@ -37,14 +37,14 @@
             <ion-label text-left>Fecha inicial</ion-label>
           </ion-item>
           <ion-item>
-            <ion-datetime displayFormat="MMMM DD YYYY" max="2099-10-31" placeholder="Seleccione la fecha inicial">
+            <ion-datetime [(ngModel)]="fechaInicial" displayFormat="YYYY MM DD" max="2099-10-31" placeholder="Seleccione la fecha inicial">
             </ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label text-left>Fecha final</ion-label>
           </ion-item>
           <ion-item>
-            <ion-datetime displayFormat="MMMM DD YYYY" max="2099-10-31" placeholder="Seleccione la fecha final">
+            <ion-datetime [(ngModel)]="fechaFinal" displayFormat="YYYY MM DD" max="2099-10-31" placeholder="Seleccione la fecha final">
             </ion-datetime>
           </ion-item>
           <ion-button expand="full" fill="clear" (click)="openDetailsWithState()">Crear mi itinerario</ion-button>

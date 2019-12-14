@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 
@@ -7,10 +7,18 @@ import { Router } from '@angular/router';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
+  userLogin: any = [];
   constructor(private storage: Storage,
     private route: Router) { }
+
+  ngOnInit() {
+    this.storage.get('usuarioActual').then(data => {
+      this.userLogin = data[0];
+      console.log(this.userLogin);
+    });
+  }
 
   logout() {
 
