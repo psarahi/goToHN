@@ -8,12 +8,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PrioridadSelectorPage implements OnInit {
   actividadesSeleccionadas: any;
-
+  idItinerarioEncabezado: number = 0;
   constructor(private route: ActivatedRoute,
     private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.actividadesSeleccionadas = this.router.getCurrentNavigation().extras.state.actividadesSeleccionadas;
+        this.idItinerarioEncabezado = this.router.getCurrentNavigation().extras.state.idItinerarioEncabezado;
         console.log(this.actividadesSeleccionadas);
       }
     });

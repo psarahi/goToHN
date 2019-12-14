@@ -63,7 +63,8 @@ export class ActividadesPage implements OnInit, OnDestroy {
 
     const navigationExtras: NavigationExtras = {
       state: {
-        actividadesSeleccionadas: this.actividadesSeleccionadas
+        actividadesSeleccionadas: this.actividadesSeleccionadas,
+        idItinerarioEncabezado: this.idItinerarioEncabezado
       }
     };
     this.router.navigate(['prioridad-selector'], navigationExtras);
