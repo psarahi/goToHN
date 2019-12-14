@@ -22,7 +22,7 @@
           <ion-checkbox checked="false" (ionChange)="cambio($event, actividad)"></ion-checkbox>
         </div>
         <div>
-          <img style="margin: 4px; border-radius: 8px;" src="/assets/Img/scuba.png" />
+          <img *ngIf="actividad.lugarFoto" style="margin: 4px; border-radius: 8px;" src="{{actividad.lugarFoto}}" />
         </div>
       </div>
 

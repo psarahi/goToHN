@@ -28,11 +28,11 @@ export class ActividadesPage implements OnInit, OnDestroy {
 
   }
   ngOnInit() {
-    this.actividadObservable = this.actividadService.getActividades().subscribe(
+    this.actividadObservable = this.actividadService.getActividadesWithPlaces().subscribe(
       dat => {
-
+        // debugger;
         this.actividades = dat;
-        //this.actividades = this.actividades.filter(x => x.lugar == this.ciudad);
+        this.actividades = this.actividades.filter(x => x.ciudad_Id == this.ciudad);
         console.log(this.actividades);
 
       }

@@ -15,7 +15,7 @@
           <ion-label> {{ actividad.actividadNombre }} </ion-label>
         </div>
         <div>
-          <img style="margin: 4px; border-radius: 8px;" src="/assets/Img/scuba.png" />
+          <img style="margin: 4px; border-radius: 8px;" src="{{actividad.lugarFoto}}" />
         </div>
         <ion-item>
           <ion-range min="0" max="3" step="1.5" value="1.5" (ionChange)="cambio($event)" snaps color="warning">

@@ -13,4 +13,8 @@ export class ActividadService {
   getActividades() {
     return this.http.get<any[]>(this.baseUrl + 'actividad');
   }
+
+  getActividadesWithPlaces(){
+    return this.http.get<any[]>(this.baseUrl + 'actividadLugar');
+  }
 }
