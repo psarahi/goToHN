@@ -36,6 +36,14 @@ export class Tab1Page implements OnInit {
     };
   }
 
+  doRefresh(event) {
+    this.itinerarioEncabezadoService.getItinerarioEncabezado().toPromise().then((itinerarios: any) =>{
+      this.itinerariosList = itinerarios.filter((itinerario: any) => itinerario.usuario_Id === this.usuarioActual.usuarioId);
+      console.log(this.itinerariosList);
+      event.target.complete();
+    });
+  }
+
   getCityImage(ciudadId) {
     switch (ciudadId) {
       case 1:

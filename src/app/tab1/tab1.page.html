@@ -7,6 +7,9 @@
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor="let itinerario of itinerariosList" routerLink="/itinerario-detalle"  class="welcome-card">
     <img src="{{getCityImage(itinerario.ciudad_Id)}}" />
     <ion-card-header>
