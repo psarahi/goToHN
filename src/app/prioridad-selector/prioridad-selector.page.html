@@ -4,6 +4,11 @@
       <ion-back-button defaultHref="/actividades"></ion-back-button>
     </ion-buttons>
     <ion-title>Asignales una prioridad</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="enviarItinerarioDetalle()">
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -18,7 +23,7 @@
           <img style="margin: 4px; border-radius: 8px;" src="{{actividad.lugarFoto}}" />
         </div>
         <ion-item>
-          <ion-range min="0" max="3" step="1.5" value="1.5" (ionChange)="cambio($event)" snaps color="warning">
+          <ion-range min="-3" max="-1" step="1" value="-2" (ionChange)="cambio($event, actividad)" snaps color="warning">
             <ion-icon slot="start" size="small" color="warning" name="star-outline"></ion-icon>
             <ion-icon slot="end" color="warning" name="star"></ion-icon>
           </ion-range>

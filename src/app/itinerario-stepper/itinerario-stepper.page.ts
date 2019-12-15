@@ -48,30 +48,30 @@ export class ItinerarioStepperPage implements OnInit {
   }
 
   openDetailsWithState() {
-
-    this.itinerarioEncabezado.itinerarioEncabezadoNombre = '';
+    this.itinerarioEncabezado.itinerarioEncabezadoNombre = 'Viaje a ' + this.ciudades
+    .find((ciudad) => ciudad.ciudadId === +this.ciudad).ciudadNombre;
     this.itinerarioEncabezado.itinerarioEncabezadoFechaInicio = this.fechaInicial;
     this.itinerarioEncabezado.itinerarioEncabezadoFechaFinal = this.fechaFinal;
     this.itinerarioEncabezado.lugar_Id = 4;
     this.itinerarioEncabezado.ciudad_Id = this.ciudad;
     this.itinerarioEncabezado.usuario_Id = this.userLogin;
 
-    //console.log(this.itinerarioEncabezado);
+    console.log(this.itinerarioEncabezado);
 
 
     this.itinerarioEncabezadoService.postItinerarioEncabezado(this.itinerarioEncabezado)
-      .toPromise()
-      .then((data: ItinerarioEncabezado) => {
-        console.log(data);
-        let navigationExtras: NavigationExtras = {
-          state: {
-            ciudad: this.ciudad,
-            idItinerario: data.itinerarioEncabezadoId
-          }
-        };
-        this.router.navigate(['actividades'], navigationExtras);
-      }
-      );
+       .toPromise()
+       .then((data: ItinerarioEncabezado) => {
+         console.log(data);
+         let navigationExtras: NavigationExtras = {
+           state: {
+             ciudad: this.ciudad,
+             idItinerario: data.itinerarioEncabezadoId
+           }
+         };
+         this.router.navigate(['actividades'], navigationExtras);
+       }
+       );
   }
 
 }

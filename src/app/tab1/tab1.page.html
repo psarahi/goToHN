@@ -7,33 +7,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides [options]="slideOpts">
-    <ion-slide>
-      <ion-card routerLink="/itinerario-detalle"  class="welcome-card">
-        <img src="/assets/Roatan.jpg" />
-        <ion-card-header>
-          <ion-card-subtitle text-left>15 de diciembre, 2019</ion-card-subtitle>
-          <ion-card-title text-left>Viaje a Roatan</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card class="welcome-card">
-        <ion-img src="/assets/Roatan.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>15 de diciembre, 2019</ion-card-subtitle>
-          <ion-card-title>Viaje a Roatan</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card class="welcome-card">
-        <ion-img src="/assets/add.svg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>15 de diciembre, 2019</ion-card-subtitle>
-          <ion-card-title>Viaje a Roatan</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+  <ion-card *ngFor="let itinerario of itinerariosList" routerLink="/itinerario-detalle"  class="welcome-card">
+    <img src="{{getCityImage(itinerario.ciudad_Id)}}" />
+    <ion-card-header>
+      <ion-card-subtitle text-left>{{itinerario.itinerarioEncabezadoFechaInicio | date }}</ion-card-subtitle>
+      <ion-card-title text-left>{{ itinerario.itinerarioEncabezadoNombre }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
