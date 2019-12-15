@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ItinerarioDetallePageRoutingModule } from './itinerario-detalle-routing.module';
 
 import { ItinerarioDetallePage } from './itinerario-detalle.page';
+import { IonBottomDrawerModule } from 'ion-bottom-drawer';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ItinerarioDetallePageRoutingModule
+    ItinerarioDetallePageRoutingModule,
+    IonBottomDrawerModule
   ],
   declarations: [ItinerarioDetallePage]
 })

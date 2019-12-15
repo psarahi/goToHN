@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DrawerState } from 'ion-bottom-drawer';
 
 @Component({
   selector: 'app-itinerario-detalle',
@@ -8,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class ItinerarioDetallePage implements OnInit {
 
   slideOpts: any;
+  shouldBounce = true;
+  disableDrag = false;
+  dockedHeight = 150;
+  distanceTop = 56;
+  drawerState = DrawerState.Docked;
+  states = DrawerState;
+  minimumHeight = 0;
+
   constructor() { }
 
 

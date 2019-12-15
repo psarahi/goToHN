@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content no-bounce>
   <div class="itinerarioDetailHeader">
     <ion-img class="itinerarioDetailHeader_image" src="/assets/Roatan.jpg">
     </ion-img>
@@ -45,10 +45,11 @@
       </ion-card-content>
     </ion-card>
     <div style="min-width: 170px;">
-      <div class="addActividad">
+      <div class="addActividad ion-activatable">
         <ion-icon name="add" style="color: gray;"></ion-icon>
         <div class="addActividadTitle">Añade otra actividad</div>
         <div class="addActividadSubtitle">Nosotros te sugerimos mas</div>
+        <ion-ripple-effect></ion-ripple-effect>
       </div>
     </div>
   </div>
@@ -64,3 +65,10 @@
   </div>
 
 </ion-content>
+
+<ion-bottom-drawer style="box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px -4px 8px rgba(0, 0, 0, 0.04), 0px -12px 32px rgba(0, 0, 0, 0.04);" [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
+  [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
+  <div class="drawer-content">
+    Actividades recomendadas
+  </div>
+</ion-bottom-drawer>
