@@ -10,8 +10,8 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let itinerario of itinerariosList"  class="welcome-card">
-    <img src="{{getCityImage(itinerario.ciudad_Id)}}" (click)="cargaDetalle(itinerario)" />
+  <ion-card *ngFor="let itinerario of itinerariosList" (click)="cargaDetalle(itinerario)" class="welcome-card">
+    <img src="{{getCityImage(itinerario.ciudad_Id)}}" />
     <ion-card-header>
       <ion-card-subtitle text-left>{{itinerario.itinerarioEncabezadoFechaInicio | date }}</ion-card-subtitle>
       <ion-card-title text-left>{{ itinerario.itinerarioEncabezadoNombre }}</ion-card-title>
