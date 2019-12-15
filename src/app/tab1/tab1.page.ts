@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { ItinerarioEncabezadoService } from '../Services/itinerario-encabezado.service';
 import { Usuario } from '../Modelos/usuario';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -14,7 +15,7 @@ export class Tab1Page implements OnInit {
   itinerariosList: any;
   usuarioActual: any;
 
-  constructor(private storage: Storage, private itinerarioEncabezadoService: ItinerarioEncabezadoService) { }
+  constructor(private storage: Storage, private itinerarioEncabezadoService: ItinerarioEncabezadoService, private router: Router) { }
 
   ngOnInit() {
     this.storage.get('usuarioActual').then(data => {
@@ -43,6 +44,16 @@ export class Tab1Page implements OnInit {
       event.target.complete();
     });
   }
+
+  cargaDetalle( itinerario){
+    const navigationExtras: NavigationExtras = {
+      state: {
+        Encabezado: itinerario,
+      }
+    };
+    this.router.navigate(['itinerario-detalle'], navigationExtras);
+  }
+  
 
   getCityImage(ciudadId) {
     switch (ciudadId) {

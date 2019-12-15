@@ -9,10 +9,10 @@
 
 <ion-content no-bounce>
   <div class="itinerarioDetailHeader">
-    <ion-img class="itinerarioDetailHeader_image" src="/assets/Roatan.jpg">
+    <ion-img class="itinerarioDetailHeader_image" src="{{getCityImage(itinerarioEncabezado.ciudad_Id)}}">
     </ion-img>
-    <div class="itinerarioDetailHeader_city"> Roatan </div>
-    <div class="itinerarioDetailHeader_time"> 15 de Diciembre - 18 de Diciembre </div>
+    <div class="itinerarioDetailHeader_city"> {{itinerarioEncabezado.itinerarioEncabezadoNombre}} </div>
+    <div class="itinerarioDetailHeader_time"> {{(itinerarioEncabezado.itinerarioEncabezadoFechaInicio| date) + ' - ' + (itinerarioEncabezado.itinerarioEncabezadoFechaFinal | date) }} </div>
   </div>
   <div class="dayTitle">15 de Diciembre</div>
   <div style="display: flex; flex-direction: row; overflow: scroll;">
@@ -45,7 +45,7 @@
       </ion-card-content>
     </ion-card>
     <div style="min-width: 170px;">
-      <div class="addActividad ion-activatable">
+      <div (click)="openDrawer()" class="addActividad ion-activatable">
         <ion-icon name="add" style="color: gray;"></ion-icon>
         <div class="addActividadTitle">Añade otra actividad</div>
         <div class="addActividadSubtitle">Nosotros te sugerimos mas</div>
@@ -68,7 +68,33 @@
 
 <ion-bottom-drawer style="box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px -4px 8px rgba(0, 0, 0, 0.04), 0px -12px 32px rgba(0, 0, 0, 0.04);" [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
   [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
-  <div class="drawer-content">
-    Actividades recomendadas
+  
+  <div style="display: flex; flex-direction: row; overflow: scroll;">
+    <ion-card style="min-width: 170px;" routerLink="/itinerario-detalle" class="welcome-card">
+      <img src="/assets/Img/westbay.png" />
+      <ion-card-header>
+        <ion-card-subtitle text-left>8:00AM - 9:00AM</ion-card-subtitle>
+        <ion-card-title text-left><span class="cardTitleHelper">Playa west bay</span></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip outline color="secondary">
+          <ion-icon name="water"></ion-icon>
+          <ion-label>Agua</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+    <ion-card style="min-width: 170px;" routerLink="/itinerario-detalle" class="welcome-card">
+      <img src="/assets/Img/westbay.png" />
+      <ion-card-header>
+        <ion-card-subtitle text-left>8:00AM - 9:00AM</ion-card-subtitle>
+        <ion-card-title text-left><span class="cardTitleHelper">Playa west bay</span></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip outline color="secondary">
+          <ion-icon name="water"></ion-icon>
+          <ion-label>Agua</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-bottom-drawer>
